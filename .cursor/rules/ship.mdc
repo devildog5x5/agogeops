@@ -22,7 +22,7 @@ Pack: `powershell -File .\build_site_zip.ps1` → `installers\AgogeOps-<x.y.z>.z
 
 The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
-1. Bump `VERSION` before a new ship. Commit and `git push` to `main`.
+1. Bump `VERSION` before a new ship. Put that same version in the footer as plain text: `Agoge Ops vX.Y.Z`. Commit and `git push` to `main`.
 2. Tag `vX.Y.Z` and `gh release create`, uploading `AgogeOps-X.Y.Z.zip`.
 3. Verify the asset URL with `gh release view`. Never invent `releases/download/...` links.
 4. Put that verbatim HTTPS URL in README. Commit and push the README.
