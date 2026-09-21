@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agoge Ops — Operations, Security &amp; Infrastructure</title>
   <meta name="description" content="Agoge Ops advises on operations, security operations, and infrastructure. Shoulder to shoulder. Shield to shield." />
-  <meta name="theme-color" content="#f3f0ea" />
+  <meta name="theme-color" content="#e7f2ea" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem("agogeops-theme");
+      var themes = { light: 1, dark: 1, green: 1, "light-green": 1, blue: 1, "light-blue": 1 };
+      document.documentElement.setAttribute("data-theme", themes[saved] ? saved : "light-green");
+    })();
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/site.css?v=1.0.4" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -24,9 +31,25 @@
       <a href="#engagements">Engagements</a>
       <a class="nav-cta" href="#contact">Contact</a>
     </nav>
+    <div class="header-tools">
+    <div class="settings">
+      <button type="button" class="settings-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">Settings</button>
+      <div class="settings-panel" id="settings-panel" hidden>
+        <p class="settings-label" id="settings-label">Appearance</p>
+        <div class="theme-list" role="radiogroup" aria-labelledby="settings-label">
+          <button type="button" role="radio" data-theme="light" aria-checked="false">Light</button>
+          <button type="button" role="radio" data-theme="dark" aria-checked="false">Dark</button>
+          <button type="button" role="radio" data-theme="green" aria-checked="false">Green</button>
+          <button type="button" role="radio" data-theme="light-green" aria-checked="true">Light soothing green</button>
+          <button type="button" role="radio" data-theme="blue" aria-checked="false">Blue</button>
+          <button type="button" role="radio" data-theme="light-blue" aria-checked="false">Light blue</button>
+        </div>
+      </div>
+    </div>
     <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Menu">
       <span></span><span></span>
     </button>
+    </div>
   </header>
 
   <div class="nav-drawer" id="nav-drawer" hidden>
@@ -192,10 +215,10 @@
           <a href="tel:+18013191061">801.319.1061</a>
         </address>
       </div>
-      <p class="fine">© 2026 Robert Foster · Agoge Ops v1.0.3</p>
+      <p class="fine">© 2026 Robert Foster · Agoge Ops v1.0.4</p>
     </section>
   </main>
 
-  <script src="assets/site.js"></script>
+  <script src="assets/site.js?v=1.0.4"></script>
 </body>
 </html>
