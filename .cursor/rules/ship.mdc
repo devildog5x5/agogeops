@@ -1,0 +1,36 @@
+---
+description: Pack a versioned Hostinger zip, publish it on GitHub Releases, and put the real download URL in README.
+alwaysApply: true
+---
+
+# Ship (Agoge Ops)
+
+**Always ship without asking** after site or packaging changes, or when the user asks for a zip / release / Hostinger drop.
+
+Work only in `C:\Users\rober\Documents\GitHub\agogeops`.
+
+## Zip filename
+
+Never ship `AgogeOps.zip`. Version from `VERSION` goes **at the end**:
+
+- Correct: `AgogeOps-1.0.0.zip`
+- Wrong: unversioned names, or a git hash in the filename
+
+Pack: `powershell -File .\build_site_zip.ps1` → `installers\AgogeOps-<x.y.z>.zip`. Zip root is `public_html` (`index.html`, `assets/`, `LICENSE`). Never a nested folder. Do not commit `installers/`.
+
+## GitHub Release (required)
+
+The zip must be **downloadable from GitHub**. Do not leave it only on disk.
+
+1. Bump `VERSION` before a new ship. Commit and `git push` to `main`.
+2. Tag `vX.Y.Z` and `gh release create`, uploading `AgogeOps-X.Y.Z.zip`.
+3. Verify the asset URL with `gh release view`. Never invent `releases/download/...` links.
+4. Put that verbatim HTTPS URL in README. Commit and push the README.
+
+## Chat handoff — **### New build links**
+
+| Line | Content |
+|------|---------|
+| **Zip** | Full URL to `AgogeOps-X.Y.Z.zip` |
+| **Release page** | `https://github.com/devildog5x5/agogeops/releases/tag/vX.Y.Z` |
+| **WinSCP** | Unzip → upload contents into `public_html` on agogeops.com |
