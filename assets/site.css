@@ -79,6 +79,26 @@ html[data-theme="green"] {
   --theme-color: #dceadf;
 }
 
+html[data-theme="dark-green"] {
+  --paper: #0f1f18;
+  --surface: #163026;
+  --header: rgba(15, 31, 24, 0.94);
+  --ink: #e7f3ec;
+  --ink-soft: #c3d8cc;
+  --muted: #8eaa9c;
+  --line: #2a4a3c;
+  --accent: #8fceb0;
+  --accent-hot: #c8e8d6;
+  --btn: #2f6b56;
+  --btn-text: #f4faf6;
+  --contact-bg: #091410;
+  --contact-ink: #f4faf6;
+  --contact-copy: #c3d8cc;
+  --contact-line: rgba(255, 255, 255, 0.22);
+  --contact-fine: #8eaa9c;
+  --theme-color: #0f1f18;
+}
+
 html[data-theme="blue"] {
   --paper: #16324f;
   --surface: #1c3d5e;
