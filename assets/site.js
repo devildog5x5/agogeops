@@ -1,13 +1,14 @@
 (function () {
   var toggle = document.getElementById("nav-toggle");
-  var drawer = document.getElementById("nav-drawer");
+  var nav = document.getElementById("site-nav");
   var settingsToggle = document.getElementById("settings-toggle");
   var settingsPanel = document.getElementById("settings-panel");
   var themeButtons = document.querySelectorAll(".theme-list button");
+  var mobileQuery = window.matchMedia("(max-width: 900px)");
 
   function closeNav() {
-    if (!drawer || !toggle) return;
-    drawer.hidden = true;
+    if (!nav || !toggle) return;
+    nav.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
   }
 
@@ -28,19 +29,26 @@
     });
   }
 
-  if (toggle && drawer) {
+  if (toggle && nav) {
     toggle.addEventListener("click", function () {
-      if (drawer.hidden) {
-        closeSettings();
-        drawer.hidden = false;
-        toggle.setAttribute("aria-expanded", "true");
-      } else {
+      if (toggle.getAttribute("aria-expanded") === "true") {
         closeNav();
+      } else {
+        closeSettings();
+        nav.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
       }
     });
-    drawer.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", closeNav);
+    nav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        if (mobileQuery.matches) closeNav();
+      });
     });
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", function (ev) {
+        if (!ev.matches) closeNav();
+      });
+    }
   }
 
   if (settingsToggle && settingsPanel) {

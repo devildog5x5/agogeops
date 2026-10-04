@@ -16,7 +16,7 @@ Never ship `AgogeOps.zip`. Version from `VERSION` goes **at the end**:
 - Correct: `AgogeOps-1.0.0.zip`
 - Wrong: unversioned names, or a git hash in the filename
 
-Pack: `powershell -File .\build_site_zip.ps1` → `installers\AgogeOps-<x.y.z>.zip`. Zip root is `public_html` (`index.html`, `assets/`, `LICENSE`). Never a nested folder. Do not commit `installers/`.
+Pack: `powershell -File .\build_site_zip.ps1` → `installers\AgogeOps-<x.y.z>.zip`. Zip root is the `public_html` contents: `index.html`, the other site pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, the IndexNow key file, `assets/`, and `LICENSE`. Paths inside the zip use forward slashes. Never a nested folder. Do not commit `installers/`.
 
 ## GitHub Release (required)
 
