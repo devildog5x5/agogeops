@@ -26,7 +26,8 @@ $RootFiles = @(
     "LICENSE",
     "robots.txt",
     "sitemap.xml",
-    "site.webmanifest"
+    "site.webmanifest",
+    ".htaccess"
 )
 
 New-Item -ItemType Directory -Force -Path $Out | Out-Null
@@ -89,10 +90,13 @@ try {
 $check = [System.IO.Compression.ZipFile]::OpenRead($Zip)
 try {
     if ($check.Entries.Count -lt 1) { throw "Zip is empty" }
+    $allowed = '^(index|it-operations|security-operations|iso-readiness|infrastructure)\.html$|^(LICENSE|robots\.txt|sitemap\.xml|site\.webmanifest|\.htaccess|BingSiteAuth\.xml)$|^[0-9a-f]{32}\.txt$|^google[A-Za-z0-9]+\.html$|^assets/.+'
+    $forbidden = '(?i)(^|/)(\.git|installers|build)(/|$)|(?i)\.(zip|7z|rar|tar|gz|tgz|bz2|xz|ps1|psm1|psd1|sh|bash|bat|cmd|py|md)$'
     foreach ($entry in $check.Entries) {
-        if ($entry.FullName -match '\\') {
-            throw "Zip entry uses a backslash: $($entry.FullName)"
-        }
+        $name = $entry.FullName
+        if ($name -match '\\') { throw "Zip entry uses a backslash: $name" }
+        if ($name -notmatch $allowed) { throw "Zip entry is not a public site file: $name" }
+        if ($name -match $forbidden) { throw "Zip entry must not be source or an archive: $name" }
     }
 } finally {
     $check.Dispose()

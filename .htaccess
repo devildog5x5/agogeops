@@ -1,0 +1,13 @@
+# Live site only. Do not serve source, scripts, or release archives.
+Options -Indexes
+
+<FilesMatch "(?i)\.(zip|7z|rar|tar|gz|tgz|bz2|xz|ps1|psm1|psd1|sh|bash|bat|cmd|py|md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+RedirectMatch 403 (?i)(?:^|/)(?:\.git|installers|build)(?:/|$)
