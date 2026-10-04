@@ -23,7 +23,7 @@ html[data-theme="light-green"] {
   --header: rgba(231, 242, 234, 0.94);
   --ink: #1a2e24;
   --ink-soft: #31483c;
-  --muted: #5a7364;
+  --muted: #52685b;
   --line: #c9ddd0;
   --accent: #2a6b52;
   --accent-hot: #1e5340;
@@ -337,6 +337,18 @@ a:hover { color: var(--accent-hot); }
   gap: 12px;
   margin-top: 32px;
 }
+.hero-note {
+  margin: 14px 0 0;
+  font-weight: 600;
+}
+.hero-note a { text-decoration: none; border-bottom: 1px solid var(--line); }
+.hero-note a:hover { border-bottom-color: var(--accent); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 .btn {
   display: inline-flex;
@@ -482,6 +494,22 @@ a:hover { color: var(--accent-hot); }
   color: var(--accent);
 }
 .steps h3 { font-size: 1.3rem; }
+
+.faq {
+  display: grid;
+}
+.faq article {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+.faq h3 {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.35rem;
+}
+.faq p { margin: 0; color: var(--ink-soft); }
+.faq a { font-weight: 600; }
 
 .contact {
   padding: 88px 0 36px;
