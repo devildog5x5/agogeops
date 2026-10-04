@@ -587,7 +587,11 @@ a:hover { color: var(--accent-hot); }
 @media (max-width: 900px) {
   html.js .nav-toggle { display: inline-flex; }
   html.js .nav { display: none; }
-  html.js .nav.is-open { display: flex; }
+  html.js .nav.is-open {
+    display: flex;
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+  }
   .nav { gap: 0; padding-bottom: 4px; }
   .nav-group {
     flex-direction: column;
