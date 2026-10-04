@@ -20,7 +20,9 @@ $Pages = @(
     "it-operations.html",
     "security-operations.html",
     "iso-readiness.html",
-    "infrastructure.html"
+    "infrastructure.html",
+    "engagement.html",
+    "faq.html"
 )
 $RootFiles = @(
     "LICENSE",
@@ -129,7 +131,7 @@ try {
 $check = [System.IO.Compression.ZipFile]::OpenRead($Zip)
 try {
     if ($check.Entries.Count -lt 1) { throw "Zip is empty" }
-    $allowed = '^(index|it-operations|security-operations|iso-readiness|infrastructure)\.html$|^(LICENSE|robots\.txt|sitemap\.xml|site\.webmanifest|\.htaccess|BingSiteAuth\.xml)$|^[0-9a-f]{32}\.txt$|^google[A-Za-z0-9]+\.html$|^assets/.*'
+    $allowed = '^(index|it-operations|security-operations|iso-readiness|infrastructure|engagement|faq)\.html$|^(LICENSE|robots\.txt|sitemap\.xml|site\.webmanifest|\.htaccess|BingSiteAuth\.xml)$|^[0-9a-f]{32}\.txt$|^google[A-Za-z0-9]+\.html$|^assets/.*'
     $forbidden = '(?i)(^|/)(\.git|installers|build)(/|$)|(?i)\.(zip|7z|rar|tar|gz|tgz|bz2|xz|ps1|psm1|psd1|sh|bash|bat|cmd|py|md)$'
     foreach ($entry in $check.Entries) {
         $name = $entry.FullName
@@ -151,6 +153,25 @@ try {
         throw "Zipped assets/og.png must be 1200x630 (got $($ogSize[0])x$($ogSize[1]))"
     }
     if ($null -eq $check.GetEntry("assets/")) { throw "Zip is missing the assets/ directory entry" }
+    $requiredAssets = @(
+        "assets/site.css",
+        "assets/site.js",
+        "assets/favicon.svg",
+        "assets/favicon.ico",
+        "assets/favicon-16.png",
+        "assets/favicon-32.png",
+        "assets/apple-touch-icon.png",
+        "assets/icon-192.png",
+        "assets/icon-512.png",
+        "assets/icon-maskable-512.png",
+        "assets/fonts/source-sans-3-latin.woff2",
+        "assets/fonts/source-serif-4-latin.woff2",
+        "assets/fonts/OFL-SourceSans3.txt",
+        "assets/fonts/OFL-SourceSerif4.txt"
+    )
+    foreach ($asset in $requiredAssets) {
+        if ($null -eq $check.GetEntry($asset)) { throw "Zip is missing $asset" }
+    }
     $shareUrl = "https://agogeops.com/assets/og.png"
     foreach ($page in $Pages) {
         $pageEntry = $check.GetEntry($page)
