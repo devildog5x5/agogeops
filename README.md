@@ -2,9 +2,9 @@
 
 Operations, security operations, and infrastructure consulting. Shoulder to shoulder. Shield to shield.
 
-**Site:** [agogeops.com](https://agogeops.com). Open `index.html` locally, or deploy the repo root to Hostinger `public_html`.
+**Site:** [agogeops.com](https://agogeops.com). Open `index.html` locally. On Hostinger, upload the zip contents into `public_html`.
 
-**Hostinger zip:** Build with `powershell -File .\build_site_zip.ps1`. The script reads `VERSION` and writes `installers/AgogeOps-<version>.zip` (currently `AgogeOps-1.0.8.zip`). Unzip into `public_html` so the pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, the IndexNow key file, `assets/`, and `LICENSE` sit in that folder. Do not commit `installers/`.
+**Hostinger zip:** Build with `powershell -File .\build_site_zip.ps1`. The script reads `VERSION` and writes `installers/AgogeOps-<version>.zip` (currently `AgogeOps-1.0.10.zip`). Unzip into `public_html` so the pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.htaccess`, the IndexNow key file, `assets/`, and `LICENSE` sit in that folder. Do not commit `installers/`. This README stays in the repository and is not part of that zip.
 
 The zip already published on GitHub Releases is [AgogeOps-1.0.7.zip](https://github.com/devildog5x5/agogeops/releases/download/v1.0.7/AgogeOps-1.0.7.zip).
 

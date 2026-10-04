@@ -14,3 +14,14 @@ This is Robert's standard. A new service page uses this header. It does not get 
 - Do not add a menu link whose target is missing.
 - Contact stays in the menu. From every page, the menu can reach the rest of the site.
 - When a page is added, list it in `sitemap.xml` and in `build_site_zip.ps1` in that same change.
+
+## Live site
+
+Never link to or serve source code or release zips from the live site.
+
+This is Robert's standard.
+
+- Pages, the menu, the footer, the sitemap, and structured data do not link to GitHub, the repository, source code, a zip download, or a release.
+- The Hostinger zip contains only public site files: the HTML pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.htaccess`, the IndexNow key, `assets/`, `LICENSE`, and a verification file when one has been added. It does not contain `installers/`, other zips, scripts, or `.git`.
+- `.htaccess` denies `*.zip`, `*.ps1`, and the same kind of archive and script (`7z`, `rar`, `tar`, `gz`, `tgz`, `bz2`, `xz`, `psm1`, `psd1`, `sh`, `bash`, `bat`, `cmd`, `py`, `md`). It also blocks `.git`, `installers/`, and `build/`.
+- `README.md` and `SOP.md` stay in the repository. They are not part of the public zip.
