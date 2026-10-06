@@ -32,6 +32,23 @@ $RootFiles = @(
     ".htaccess"
 )
 
+$seenTitles = @{}
+foreach ($page in $Pages) {
+    $html = Get-Content -Path (Join-Path $Root $page) -Raw
+    if ($html -notmatch '<title>([^<]+)</title>') { throw "Missing title in $page" }
+    $title = $Matches[1]
+    if ($title.Length -lt 40 -or $title.Length -gt 60) { throw "Title length $($title.Length) is outside 40-60 in $page ($title)" }
+    if ($seenTitles.ContainsKey($title)) { throw "Duplicate title in $page and $($seenTitles[$title]): $title" }
+    $seenTitles[$title] = $page
+    if ($html -notmatch 'name="description" content="([^"]+)"') { throw "Missing meta description in $page" }
+    $descLen = $Matches[1].Length
+    if ($descLen -lt 120 -or $descLen -gt 160) { throw "Meta description length $descLen is outside 120-160 in $page" }
+    if ($html -notmatch 'property="og:image:alt" content="[^"]+"') { throw "Missing og:image:alt in $page" }
+    foreach ($img in [regex]::Matches($html, '<img\b[^>]*>')) {
+        if ($img.Value -notmatch 'alt="[^"]+"') { throw "Image is missing descriptive alt text in $page" }
+    }
+}
+
 New-Item -ItemType Directory -Force -Path $Out | Out-Null
 Get-ChildItem -Path $Out -Filter "AgogeOps-*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
 
