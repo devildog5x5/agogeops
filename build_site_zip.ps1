@@ -1,4 +1,4 @@
-# Build AgogeOps-<version>.zip for Hostinger public_html.
+# Build agogeops-v<version>.zip for Hostinger public_html.
 # Zip entries use forward slashes. Keep the page list in sync with sitemap.xml and SOP.md.
 $ErrorActionPreference = "Stop"
 $Root = $PSScriptRoot
@@ -12,7 +12,7 @@ if ($Version -notmatch '^\d+\.\d+\.\d+$') {
 }
 
 $Out = Join-Path $Root "installers"
-$ZipName = "AgogeOps-$Version.zip"
+$ZipName = "agogeops-v$Version.zip"
 $Zip = Join-Path $Out $ZipName
 
 $Pages = @(
@@ -50,6 +50,7 @@ foreach ($page in $Pages) {
 }
 
 New-Item -ItemType Directory -Force -Path $Out | Out-Null
+Get-ChildItem -Path $Out -Filter "agogeops-v*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
 Get-ChildItem -Path $Out -Filter "AgogeOps-*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
 
 Add-Type -AssemblyName System.IO.Compression
