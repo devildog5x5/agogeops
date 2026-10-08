@@ -11,19 +11,19 @@ Work only in `C:\Users\rober\Documents\GitHub\agogeops`.
 
 ## Zip filename
 
-Never ship `AgogeOps.zip`. Version from `VERSION` goes **at the end**:
+Never ship an unversioned zip. The deployable file is named for the site, with the version from `VERSION`:
 
-- Correct: `AgogeOps-1.0.0.zip`
-- Wrong: unversioned names, or a git hash in the filename
+- Correct: `agogeops-v1.0.0.zip`
+- Wrong: `AgogeOps.zip`, `AgogeOps-1.0.0.zip`, or a git hash in the filename
 
-Pack: `powershell -File .\build_site_zip.ps1` → `installers\AgogeOps-<x.y.z>.zip`. Zip root is the `public_html` contents: `index.html`, the other site pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.htaccess`, the IndexNow key file, `assets/`, and `LICENSE`. Paths inside the zip use forward slashes. Never a nested folder. Do not put `installers/`, other zips, scripts, or `.git` in the zip. Do not commit `installers/`. The live site does not link to GitHub or to this zip. See `SOP.md`.
+Pack: `powershell -File .\build_site_zip.ps1` → `installers\agogeops-v<x.y.z>.zip`. Zip root is the `public_html` contents: `index.html`, the other site pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.htaccess`, the IndexNow key file, `assets/`, and `LICENSE`. Paths inside the zip use forward slashes. Never a nested folder. Do not put `installers/`, other zips, scripts, or `.git` in the zip. Do not commit `installers/`. The live site does not link to GitHub or to this zip. See `SOP.md`.
 
 ## GitHub Release (required)
 
 The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
-1. Bump `VERSION` before a new ship. Put that same version in the footer as plain text: `Agoge Ops vX.Y.Z`. Commit and `git push` to `main`.
-2. Tag `vX.Y.Z` and `gh release create`, uploading `AgogeOps-X.Y.Z.zip`.
+1. Bump `VERSION` before a new ship. Put that same version in the compact footer on every page: `Agoge Ops vX.Y.Z · © 2026 Robert Foster · rmf@SpartanPhalanx.com`. Commit and `git push` to `main`.
+2. Tag `vX.Y.Z` and `gh release create`, uploading `agogeops-vX.Y.Z.zip`.
 3. Verify the asset URL with `gh release view`. Never invent `releases/download/...` links.
 4. Put that verbatim HTTPS URL in README. Commit and push the README.
 
@@ -31,6 +31,6 @@ The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
 | Line | Content |
 |------|---------|
-| **Zip** | Full URL to `AgogeOps-X.Y.Z.zip` |
+| **Zip** | Full URL to `agogeops-vX.Y.Z.zip` |
 | **Release page** | `https://github.com/devildog5x5/agogeops/releases/tag/vX.Y.Z` |
 | **WinSCP** | Unzip → upload contents into `public_html` on agogeops.com |

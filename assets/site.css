@@ -33,7 +33,6 @@ html[data-theme="light-green"] {
   --contact-ink: #f7fbf8;
   --contact-copy: #d5e6db;
   --contact-line: rgba(255, 255, 255, 0.28);
-  --contact-fine: #b7cfc2;
   --theme-color: #e7f2ea;
 }
 
@@ -53,7 +52,6 @@ html[data-theme="light"] {
   --contact-ink: #f3f0ea;
   --contact-copy: #d5ddd9;
   --contact-line: rgba(255, 255, 255, 0.28);
-  --contact-fine: #b7c4bf;
   --theme-color: #f3f0ea;
 }
 
@@ -73,7 +71,6 @@ html[data-theme="dark"] {
   --contact-ink: #f3f0ea;
   --contact-copy: #c9d4ce;
   --contact-line: rgba(255, 255, 255, 0.22);
-  --contact-fine: #8ea399;
   --theme-color: #141816;
 }
 
@@ -93,7 +90,6 @@ html[data-theme="green"] {
   --contact-ink: #f4faf6;
   --contact-copy: #d3e6db;
   --contact-line: rgba(255, 255, 255, 0.28);
-  --contact-fine: #b7cfc2;
   --theme-color: #dceadf;
 }
 
@@ -113,7 +109,6 @@ html[data-theme="dark-green"] {
   --contact-ink: #f4faf6;
   --contact-copy: #c3d8cc;
   --contact-line: rgba(255, 255, 255, 0.22);
-  --contact-fine: #8eaa9c;
   --theme-color: #0f1f18;
 }
 
@@ -133,7 +128,6 @@ html[data-theme="blue"] {
   --contact-ink: #f4f7fb;
   --contact-copy: #c5d6e6;
   --contact-line: rgba(255, 255, 255, 0.22);
-  --contact-fine: #8eabc4;
   --theme-color: #16324f;
 }
 
@@ -143,7 +137,7 @@ html[data-theme="light-blue"] {
   --header: rgba(231, 241, 248, 0.94);
   --ink: #152433;
   --ink-soft: #2c4154;
-  --muted: #5a7082;
+  --muted: #596f81;
   --line: #c5d7e6;
   --accent: #1d4e89;
   --accent-hot: #163a66;
@@ -153,7 +147,6 @@ html[data-theme="light-blue"] {
   --contact-ink: #f5fafc;
   --contact-copy: #d4e3f0;
   --contact-line: rgba(255, 255, 255, 0.28);
-  --contact-fine: #b7c9d8;
   --theme-color: #e7f1f8;
 }
 
@@ -540,14 +533,27 @@ button:focus-visible {
   width: fit-content;
 }
 .contact address a:hover { border-bottom-color: var(--contact-ink); color: var(--contact-ink); }
-.fine {
-  width: min(var(--max), calc(100% - 48px));
-  margin: 64px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--contact-line);
-  color: var(--contact-fine);
-  font-size: 0.9rem;
+.site-meta {
+  padding: 10px 16px 12px;
+  text-align: center;
 }
+.site-meta p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.site-meta span,
+.site-meta a {
+  white-space: nowrap;
+}
+.site-meta a {
+  color: inherit;
+  font-size: 12.5px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.site-meta a:hover { color: var(--ink); }
 
 .header-tools {
   display: flex;

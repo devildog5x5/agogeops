@@ -15,6 +15,18 @@ This is Robert's standard. A new service page uses this header. It does not get 
 - Contact stays in the menu. From every page, the menu can reach the rest of the site.
 - When a page is added, list it in `sitemap.xml` and in `build_site_zip.ps1` in that same change.
 
+## Footer
+
+Every page ends with the same compact line, under the contact block:
+
+`Agoge Ops vX.Y.Z · © 2026 Robert Foster · rmf@SpartanPhalanx.com`
+
+- The email is the practice contact address, as a small mailto link.
+- The line is centered, 12.5px, with light padding. It stays one line on a desktop and wraps at the separators on a phone.
+- The color is the theme muted color, on light and dark themes, and it meets WCAG AA.
+- The contact block and the main menu stay as they are. Do not add a second copyright, brand, or version line.
+- The line does not link to GitHub, source code, or a zip.
+
 ## Live site
 
 Never link to or serve source code or release zips from the live site.
