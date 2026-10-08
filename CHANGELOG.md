@@ -2,7 +2,7 @@
 
 ## 1.1.3
 
-Customer support is text only. The site no longer shows a support email. Contact and consultation links use `sms:+18013191061`, and the footer reads `Agoge Ops v1.1.3 · © 2026 Robert Foster · Text 801-319-1061 for support`.
+Customer support is text only. The contact line is `Inquiries Text: 801.319.1061` (`sms:+18013191061`). The footer reads `Agoge Ops v1.1.3 · © 2026 Robert Foster · Inquiries Text: 801.319.1061`. No support email is published.
 
 ## 1.1.2
 

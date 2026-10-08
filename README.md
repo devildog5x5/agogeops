@@ -10,7 +10,7 @@ The zip already published on GitHub Releases is [agogeops-v1.1.2.zip](https://gi
 
 **Menu:** Every page uses the same header menu. The standard is [SOP.md](SOP.md).
 
-**Contact:** Text 801-319-1061 for customer support.
+**Contact:** Inquiries Text: 801.319.1061
 
 ## Search engines
 
