@@ -19,9 +19,9 @@ This is Robert's standard. A new service page uses this header. It does not get 
 
 Every page ends with the same compact line, under the contact block:
 
-`Agoge Ops vX.Y.Z · © 2026 Robert Foster · rmf@SpartanPhalanx.com`
+`Agoge Ops vX.Y.Z · © 2026 Robert Foster · Text 801-319-1061 for support`
 
-- The email is the practice contact address, as a small mailto link.
+- The number is an `sms:+18013191061` link. The site does not publish a support email.
 - The line is centered, 12.5px, with light padding. It stays one line on a desktop and wraps at the separators on a phone.
 - The color is the theme muted color, on light and dark themes, and it meets WCAG AA.
 - The contact block and the main menu stay as they are. Do not add a second copyright, brand, or version line.
