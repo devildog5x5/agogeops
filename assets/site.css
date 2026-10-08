@@ -257,7 +257,7 @@ a:hover { color: var(--accent-hot); }
   color: var(--accent) !important;
 }
 .nav-cta:visited { color: var(--accent) !important; }
-.nav-cta:hover { background: var(--btn); color: var(--btn-text) !important; }
+.nav-cta:hover { background: var(--btn); color: #ffffff !important; }
 
 .nav-toggle {
   display: none;
@@ -357,9 +357,9 @@ button:focus-visible {
 }
 .btn.primary {
   background: var(--btn);
-  color: var(--btn-text);
+  color: #ffffff;
 }
-.btn.primary:hover { filter: brightness(1.12); color: var(--btn-text); }
+.btn.primary:hover { filter: brightness(1.12); color: #ffffff; }
 .btn.ghost {
   background: transparent;
   color: var(--ink);
@@ -507,7 +507,7 @@ button:focus-visible {
 .contact {
   padding: 88px 0 36px;
   background: var(--contact-bg);
-  color: var(--contact-ink);
+  color: #ffffff;
 }
 .contact-inner {
   display: grid;
@@ -515,24 +515,22 @@ button:focus-visible {
   gap: 48px;
   align-items: end;
 }
-.contact h2 { color: var(--contact-ink); }
-.contact p { margin: 16px 0 0; max-width: 36em; color: var(--contact-copy); font-size: 1.125rem; }
+.contact h2 { color: #ffffff; }
+.contact p { margin: 16px 0 0; max-width: 36em; color: #ffffff; font-size: 1.125rem; }
 .contact address {
   margin: 0;
   font-style: normal;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   font-size: 1.2rem;
   font-weight: 600;
+  line-height: 1.45;
+  color: #ffffff;
 }
 .contact address a {
-  color: var(--contact-ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--contact-line);
-  width: fit-content;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.contact address a:hover { border-bottom-color: var(--contact-ink); color: var(--contact-ink); }
+.contact address a:hover { color: #ffffff; }
 .site-meta {
   padding: 10px 16px 12px;
   text-align: center;
@@ -554,6 +552,11 @@ button:focus-visible {
   text-underline-offset: 2px;
 }
 .site-meta a:hover { color: var(--ink); }
+html[data-theme="dark"] .site-meta p,
+html[data-theme="dark-green"] .site-meta p,
+html[data-theme="blue"] .site-meta p {
+  color: #ffffff;
+}
 
 .header-tools {
   display: flex;
