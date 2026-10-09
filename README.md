@@ -6,7 +6,7 @@ Operations, security operations, and infrastructure consulting. Shoulder to shou
 
 **Hostinger zip:** Build with `powershell -File .\build_site_zip.ps1`. The script reads `VERSION` and writes `installers/agogeops-v<version>.zip` (currently `agogeops-v1.1.4.zip`). Unzip into `public_html` so the pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.htaccess`, the IndexNow key file, `assets/`, and `LICENSE` sit in that folder. Do not commit `installers/`. This README stays in the repository and is not part of that zip.
 
-The zip already published on GitHub Releases is [agogeops-v1.1.3.zip](https://github.com/devildog5x5/agogeops/releases/download/v1.1.3/agogeops-v1.1.3.zip).
+The zip already published on GitHub Releases is [agogeops-v1.1.4.zip](https://github.com/devildog5x5/agogeops/releases/download/v1.1.4/agogeops-v1.1.4.zip).
 
 **Menu:** Every page uses the same header menu. The standard is [SOP.md](SOP.md).
 
