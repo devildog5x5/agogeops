@@ -4,13 +4,13 @@ Operations, security operations, and infrastructure consulting. Shoulder to shou
 
 **Site:** [agogeops.com](https://agogeops.com). Open `index.html` locally. On Hostinger, upload the zip contents into `public_html`.
 
-**Hostinger zip:** Build with `powershell -File .\build_site_zip.ps1`. The script reads `VERSION` and writes `installers/agogeops-v<version>.zip` (currently `agogeops-v1.1.3.zip`). Unzip into `public_html` so the pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.htaccess`, the IndexNow key file, `assets/`, and `LICENSE` sit in that folder. Do not commit `installers/`. This README stays in the repository and is not part of that zip.
+**Hostinger zip:** Build with `powershell -File .\build_site_zip.ps1`. The script reads `VERSION` and writes `installers/agogeops-v<version>.zip` (currently `agogeops-v1.1.4.zip`). Unzip into `public_html` so the pages, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `.htaccess`, the IndexNow key file, `assets/`, and `LICENSE` sit in that folder. Do not commit `installers/`. This README stays in the repository and is not part of that zip.
 
 The zip already published on GitHub Releases is [agogeops-v1.1.3.zip](https://github.com/devildog5x5/agogeops/releases/download/v1.1.3/agogeops-v1.1.3.zip).
 
 **Menu:** Every page uses the same header menu. The standard is [SOP.md](SOP.md).
 
-**Contact:** Inquiries Text: 801.319.1061
+**Contact:** Inquiries Text First Then Call: 801.319.1061
 
 ## Search engines
 
@@ -44,4 +44,4 @@ The key file in the site root contains `3d3950baf93a87fc110ed15fddaeae16`. After
 
 Bing accepts IndexNow.
 
-Copyright © 2026 Robert Foster · Agoge Ops. All rights reserved.
+Copyright © 2026 REKKY Consulting LLC · Agoge Ops. All rights reserved.
