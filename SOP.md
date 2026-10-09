@@ -19,7 +19,7 @@ This is Robert's standard. A new service page uses this header. It does not get 
 
 Every page ends with the same compact line, under the contact block:
 
-`Agoge Ops vX.Y.Z · © 2026 Robert Foster · Inquiries Text: 801.319.1061`
+`Agoge Ops vX.Y.Z · © 2026 REKKY Consulting LLC · Inquiries Text First Then Call: 801.319.1061`
 
 - The number is an `sms:+18013191061` link. The site does not publish a support email.
 - The line is centered, 12.5px, with light padding. It stays one line on a desktop and wraps at the separators on a phone.
